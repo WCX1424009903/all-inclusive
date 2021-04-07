@@ -11,6 +11,7 @@
     <modules>
         <module>alibaba-nacos-producer</module>
         <module>cloud-gateway</module>
+        <module>common</module>
     </modules>
     <packaging>pom</packaging>
 
