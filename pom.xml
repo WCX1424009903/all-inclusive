@@ -12,6 +12,7 @@
         <module>alibaba-nacos-producer</module>
         <module>cloud-gateway</module>
         <module>common</module>
+        <module>mysql-masterslave-shardingsphere</module>
     </modules>
     <packaging>pom</packaging>
 
