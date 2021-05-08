@@ -1,4 +1,4 @@
-package com.example.utils;
+package cn.com.caeri.pan.utils;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -104,6 +104,7 @@ public class ZipUtil {
         if(!zipFile.exists()) {
             zipFile.createNewFile();
         }
+
         int fileCount = 0;//记录压缩了几个文件？
         try {
             ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(zipFile));
@@ -194,13 +195,13 @@ public class ZipUtil {
 //        System.out.println(file);
 //        ZipUtil.unzip("D:\\ruoyi\\uploadPath\\download.zip");
 
-//        List<String> fileList = new ArrayList<>();
-//        fileList.add("D:\\ruoyi\\uploadPath\\download\\792b3d43-c25e-4bf7-a42b-d9283ff9b94d_预警列表导出.xlsx");
-//        fileList.add("D:\\ruoyi\\uploadPath\\download\\b6e779b4-0845-4a17-9d1b-7b7a4eaa29af_nox超标排放异常.xlsx");
-//        fileList.add("D:\\ruoyi\\uploadPath\\download\\82cac1db-9188-4c8d-a03f-d5a4cb29475c_排放异常.xlsx");
-//        fileList.add("D:\\ruoyi\\uploadPath\\download\\5369c5da-b3c7-4d33-928a-ee7cc3b2a7a2_关联车辆.xlsx");
-//        String fileNem = ZipUtil.zip(fileList, "D:\\ruoyi\\uploadPath\\download\\1111.zip");
-//        System.out.println(fileNem);
+        List<String> fileList = new ArrayList<>();
+        fileList.add("D:\\ruoyi\\uploadPath\\download\\792b3d43-c25e-4bf7-a42b-d9283ff9b94d_预警列表导出.xlsx");
+        fileList.add("D:\\ruoyi\\uploadPath\\download\\b6e779b4-0845-4a17-9d1b-7b7a4eaa29af_nox超标排放异常.xlsx");
+        fileList.add("D:\\ruoyi\\uploadPath\\download\\82cac1db-9188-4c8d-a03f-d5a4cb29475c_排放异常.xlsx");
+        fileList.add("D:\\ruoyi\\uploadPath\\download\\5369c5da-b3c7-4d33-928a-ee7cc3b2a7a2_关联车辆.xlsx");
+        String fileNem = ZipUtil.zip(fileList, "D:\\ruoyi\\uploadPath\\download\\1111.zip");
+        System.out.println(fileNem);
     }
 
 }
