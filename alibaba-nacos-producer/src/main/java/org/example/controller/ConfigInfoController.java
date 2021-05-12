@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RefreshScope
 @RestController
+@RequestMapping("/configInfo")
 public class ConfigInfoController {
 
     @Value("${server.port}")

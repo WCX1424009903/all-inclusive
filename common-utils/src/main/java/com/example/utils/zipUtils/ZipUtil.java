@@ -1,4 +1,4 @@
-package cn.com.caeri.pan.utils;
+package com.example.utils.zipUtils;
 
 import org.apache.commons.lang3.StringUtils;
 

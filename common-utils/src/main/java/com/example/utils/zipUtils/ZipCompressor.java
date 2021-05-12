@@ -1,4 +1,4 @@
-package com.example.utils;
+package com.example.utils.zipUtils;
 
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.IdUtil;

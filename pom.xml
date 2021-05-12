@@ -11,7 +11,7 @@
     <modules>
         <module>alibaba-nacos-producer</module>
         <module>cloud-gateway</module>
-        <module>common</module>
+        <module>common-utils</module>
         <module>mysql-masterslave-shardingsphere</module>
     </modules>
     <packaging>pom</packaging>
@@ -19,42 +19,33 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.2.RELEASE</version>
+        <version>2.3.10.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <!--统一管理版本号-->
     <properties>
+        <!--spring相关版本依赖-->
+        <spring.cloud.alibaba.version>2.2.1.RELEASE</spring.cloud.alibaba.version>
+        <spring.cloud.version>Hoxton.SR11</spring.cloud.version>
+        <!--子工程版本-->
+        <common.utlis.version>1.0-SNAPSHOT</common.utlis.version>
+        <!--项目构建类版本依赖-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <spring.cloud.alibaba.version>2.2.1.RELEASE</spring.cloud.alibaba.version>
-        <spring.cloud.version>Hoxton.SR6</spring.cloud.version>
-        <springboot.version>2.4.4</springboot.version>
+        <skipTests>true</skipTests>
+        <!--工具类版本依赖-->
         <pagehelper.version>5.2.0</pagehelper.version>
         <apache.commons.lang3.version>3.12.0</apache.commons.lang3.version>
         <poi.version>3.17</poi.version>
-        <common.version>1.0-SNAPSHOT</common.version>
         <commons.io.version>2.5</commons.io.version>
         <commons.fileupload.version>1.3.3</commons.fileupload.version>
         <org.apache.httpclient.version>4.5.5</org.apache.httpclient.version>
-        <skipTests>true</skipTests>
+        <hutool.version>5.5.8</hutool.version>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -63,6 +54,7 @@
     <!--申明引用-->
     <dependencyManagement>
     <dependencies>
+        <!--spring版本声明-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-alibaba-dependencies</artifactId>
@@ -77,25 +69,36 @@
             <type>pom</type>
             <scope>import</scope>
         </dependency>
+        <!--子工程版本声明-->
+        <!--公共utils工程-->
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>common-utils</artifactId>
+            <version>${common.utlis.version}</version>
+        </dependency>
 
+        <!--第三方插件类版本声明-->
         <!--MyBatis分页插件-->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
             <version>${pagehelper.version}</version>
         </dependency>
+
         <!--常用工具类 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${apache.commons.lang3.version}</version>
         </dependency>
+
         <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-core -->
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-core</artifactId>
-            <version>5.5.8</version>
+            <version>${hutool.version}</version>
         </dependency>
+
         <!-- excel工具 -->
         <dependency>
             <groupId>org.apache.poi</groupId>
@@ -108,17 +111,20 @@
             <artifactId>poi-scratchpad</artifactId>
             <version>${poi.version}</version>
         </dependency>
+
         <!--io常用工具类 -->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>${commons.io.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>common</artifactId>
             <version>${common.version}</version>
         </dependency>
+
         <!--文件上传工具类 -->
         <dependency>
             <groupId>commons-fileupload</groupId>
@@ -132,6 +138,7 @@
             <artifactId>httpclient</artifactId>
             <version>${org.apache.httpclient.version}</version>
         </dependency>
+
     </dependencies>
     </dependencyManagement>
 </project>

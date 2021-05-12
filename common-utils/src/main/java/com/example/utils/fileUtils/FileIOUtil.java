@@ -1,4 +1,4 @@
-package com.example.utils;
+package com.example.utils.fileUtils;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.fileupload.FileItem;
@@ -18,8 +18,6 @@ import java.io.OutputStream;
  */
 @Slf4j
 public class FileIOUtil {
-
-
     /**
      * 获取封装得MultipartFile
      *
