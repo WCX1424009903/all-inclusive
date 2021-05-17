@@ -6,9 +6,12 @@ spring:
       config:
         server-addr: 127.0.0.1:8848
         file-extension: yml
+        namespace: 7a426b96-2cf3-42ec-9f0e-4d32d0a15801
+        shared-configs: common-dev.yml #公共yml配置
       discovery:
         server-addr: 127.0.0.1:8848
         #是否注册服务到配置中心
         register-enabled: true
+        namespace: 7a426b96-2cf3-42ec-9f0e-4d32d0a15801
   profiles:
     active: dev
