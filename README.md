@@ -8,7 +8,7 @@ ___
 maven版本: apache-maven-3.5.3
 
 ---
-nacos-config-yml文件夹存放nacos导出配置文件（nacos版本2.0.0）
+nacos-org.example.config-yml文件夹存放nacos导出配置文件（nacos版本2.0.0）
 ___
 
 

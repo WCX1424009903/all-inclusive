@@ -36,5 +36,9 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>inclusive-core</artifactId>
+        </dependency>
     </dependencies>
 </project>

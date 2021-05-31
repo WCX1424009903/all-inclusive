@@ -12,17 +12,17 @@ import org.springframework.web.util.pattern.PathPatternParser;
  * @author wcx
  */
 @Configuration
-public class CorsConfig {
+public class CorsCustomiseWebFluxConfiguration {
+
     @Bean
-    public CorsWebFilter corsFilter() {
+    public CorsWebFilter corsFilterWebFlux() {
         CorsConfiguration config = new CorsConfiguration();
         config.addAllowedMethod("*");
         config.addAllowedOrigin("*");
         config.addAllowedHeader("*");
-
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource(new PathPatternParser());
         source.registerCorsConfiguration("/**", config);
-
         return new CorsWebFilter(source);
     }
+
 }
