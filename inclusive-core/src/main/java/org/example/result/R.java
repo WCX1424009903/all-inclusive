@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.enums.StatusCodeEnum;
 
+import java.io.Serializable;
+
 /**
  * 返回结果
  * @author wcx
@@ -14,7 +16,8 @@ import org.example.enums.StatusCodeEnum;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class R<T> {
+public class R<T> implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String message;
     private T data;
     private int code;
