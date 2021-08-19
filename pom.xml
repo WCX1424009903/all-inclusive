@@ -14,6 +14,7 @@
         <module>common-utils</module>
         <module>mysql-masterslave-shardingsphere</module>
         <module>inclusive-core</module>
+        <module>elasticsearch</module>
     </modules>
     <packaging>pom</packaging>
 

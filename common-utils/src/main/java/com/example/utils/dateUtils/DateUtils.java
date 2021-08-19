@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -200,4 +201,19 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils
         return df.format(lastDay);
     }
 
+    /**
+     * 时间月份加减
+     *
+     * @param date
+     *
+     * @return
+     *
+     * @throws ParseException
+     */
+    public static synchronized Date subMonth(Date date, int month){
+        Calendar rightNow = Calendar.getInstance();
+        rightNow.setTime(date);
+        rightNow.add(Calendar.MONTH, month);
+        return rightNow.getTime();
+    }
 }
