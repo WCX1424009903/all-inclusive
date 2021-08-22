@@ -7,7 +7,7 @@
 select * from menu
 </select>
 <select id="listToder" resultType="java.util.Map">
-select * from t_order where order_id=#{orderId}
+select * from t_order where orderNumber=#{orderNumber}
 </select>
 <insert id="inserTorder">
 insert into t_order(orderNumber,otherthings) values (#{orderNumber},#{otherthings})

@@ -2,11 +2,10 @@ package org.example.aop;
 
 import cn.hutool.core.util.StrUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.shardingsphere.infra.hint.HintManager;
+import org.apache.shardingsphere.api.hint.HintManager;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 /**
@@ -22,14 +21,13 @@ public class ShardingAopUtil {
 
     @Around(value = "@annotation(shardingAop)")
     public Object aroudShardingPointCut(ProceedingJoinPoint point,ShardingAop shardingAop) throws Throwable {
-        log.info("分片注解生效");
-        try (HintManager hintManager = HintManager.getInstance()){
+        log.info("aop分片注解生效");
+        try (HintManager hintManager = HintManager.getInstance()) {
             // 分片值
             String sharingValue = shardingAop.value();
             if (StrUtil.isNotBlank(sharingValue)) {
                 sharingValue = AspectSupportUtils.getKeyValue(point,sharingValue).toString();
                 // 设置分片策略
-                hintManager.addDatabaseShardingValue("t_order", sharingValue);
                 hintManager.addTableShardingValue("t_order", sharingValue);
             }
         }

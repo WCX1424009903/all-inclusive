@@ -9,9 +9,9 @@ import java.util.Map;
 
 public interface SecondMapper {
     List<Map> listMenus();
-
+    @ShardingAop(value = "#a0.orderNumber")
     List<Map> listToder(TOrder tOrder);
 
-    @ShardingAop(value = "#a0.orderId")
+    @ShardingAop(value = "#a0.orderNumber")
     int inserTorder(TOrder tOrder);
 }

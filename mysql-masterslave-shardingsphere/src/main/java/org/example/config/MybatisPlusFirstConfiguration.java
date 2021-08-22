@@ -2,6 +2,11 @@ package org.example.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.shardingsphere.api.config.sharding.ShardingRuleConfiguration;
+import org.apache.shardingsphere.api.config.sharding.TableRuleConfiguration;
+import org.apache.shardingsphere.api.config.sharding.strategy.InlineShardingStrategyConfiguration;
+import org.apache.shardingsphere.api.config.sharding.strategy.NoneShardingStrategyConfiguration;
+import org.apache.shardingsphere.shardingjdbc.api.ShardingDataSourceFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
@@ -17,7 +22,11 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
+import java.util.Properties;
 import java.util.stream.Stream;
 
 /**
@@ -47,8 +56,19 @@ public class MybatisPlusFirstConfiguration {
         return new DruidDataSource();
     }
 
+    @Bean(name = "shardingSecondDataSourceFirst")
+    public DataSource shardingSecondDataSource(@Qualifier("firstDataSource") DataSource firstDataSource) throws SQLException {
+        // 配置真实数据源
+        Map<String, DataSource> dataSourceMap = new HashMap<String, DataSource>(2);
+        dataSourceMap.put("firstDataSource", firstDataSource);
+        // sql日志打印
+        Properties properties = new Properties();
+        properties.setProperty("sql.show","true");
+        return ShardingDataSourceFactory.createDataSource(dataSourceMap, createShardingRuleConfiguration(),properties);
+    }
+
     @Bean(name = "firstSqlSessionFactory")
-    public SqlSessionFactory firstSqlSessionFactory(@Qualifier("firstDataSource") DataSource dataSource) throws Exception {
+    public SqlSessionFactory firstSqlSessionFactory(@Qualifier("shardingSecondDataSourceFirst") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
         // 设置xml位置
@@ -57,7 +77,7 @@ public class MybatisPlusFirstConfiguration {
     }
 
     @Bean(name = "firstDataSourceTransactionManager")
-    public DataSourceTransactionManager firstDataSourceTransactionManager(@Qualifier("firstDataSource") DataSource dataSource) {
+    public DataSourceTransactionManager firstDataSourceTransactionManager(@Qualifier("shardingSecondDataSourceFirst") DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
 
@@ -78,4 +98,22 @@ public class MybatisPlusFirstConfiguration {
             return new Resource[0];
         }
     }
+
+    private ShardingRuleConfiguration createShardingRuleConfiguration() {
+        ShardingRuleConfiguration result = new ShardingRuleConfiguration();
+        result.setDefaultDataSourceName("firstDataSource");
+        result.getTableRuleConfigs().add(getOrderTableRuleConfiguration());
+        return result;
+    }
+    /**
+     *配置某表的分片规则
+     */
+    private static TableRuleConfiguration getOrderTableRuleConfiguration() {
+        TableRuleConfiguration result = new TableRuleConfiguration("user");
+        // 配置分表规则--某个字段对应某个算法
+        result.setTableShardingStrategyConfig(new NoneShardingStrategyConfiguration());
+        result.setDatabaseShardingStrategyConfig(new NoneShardingStrategyConfiguration());
+        return result;
+    }
+
 }

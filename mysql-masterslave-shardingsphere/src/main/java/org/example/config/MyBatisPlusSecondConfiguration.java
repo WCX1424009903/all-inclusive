@@ -1,17 +1,15 @@
 package org.example.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import com.baomidou.mybatisplus.annotation.DbType;
-import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
-import com.baomidou.mybatisplus.extension.plugins.pagination.dialects.MySqlDialect;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.shardingsphere.driver.api.ShardingSphereDataSourceFactory;
-import org.apache.shardingsphere.infra.config.algorithm.ShardingSphereAlgorithmConfiguration;
-import org.apache.shardingsphere.sharding.api.config.ShardingRuleConfiguration;
-import org.apache.shardingsphere.sharding.api.config.rule.ShardingTableRuleConfiguration;
-import org.apache.shardingsphere.sharding.api.config.strategy.keygen.KeyGenerateStrategyConfiguration;
-import org.apache.shardingsphere.sharding.api.config.strategy.sharding.NoneShardingStrategyConfiguration;
-import org.apache.shardingsphere.sharding.api.config.strategy.sharding.StandardShardingStrategyConfiguration;
+import org.apache.shardingsphere.api.config.sharding.ShardingRuleConfiguration;
+import org.apache.shardingsphere.api.config.sharding.TableRuleConfiguration;
+import org.apache.shardingsphere.api.config.sharding.strategy.HintShardingStrategyConfiguration;
+import org.apache.shardingsphere.api.config.sharding.strategy.InlineShardingStrategyConfiguration;
+import org.apache.shardingsphere.api.config.sharding.strategy.NoneShardingStrategyConfiguration;
+import org.apache.shardingsphere.api.config.sharding.strategy.StandardShardingStrategyConfiguration;
+import org.apache.shardingsphere.shardingjdbc.api.ShardingDataSourceFactory;
+import org.example.algorithm.HintShardingAlgorithmTables;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
@@ -36,7 +34,8 @@ import java.util.stream.Stream;
  * @author WCX
  */
 @Configuration
-@MapperScan(basePackages = MyBatisPlusSecondConfiguration.MAPPER_SECOND,sqlSessionTemplateRef = "seconddbSqlSessionTemplate")
+@MapperScan(basePackages = {MyBatisPlusSecondConfiguration.MAPPER_SECOND},
+        sqlSessionTemplateRef = "seconddbSqlSessionTemplate")
 public class MyBatisPlusSecondConfiguration {
     private static final ResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver();
     /**
@@ -47,7 +46,7 @@ public class MyBatisPlusSecondConfiguration {
      * xml位置位置
      */
     public String[] mapperLocations = new String[]{
-            "classpath*:/mapper/second/*.xml"
+            "classpath*:/mapper/second/*.xml",
     };
 
     @Bean(name = "secondDataSource")
@@ -64,7 +63,7 @@ public class MyBatisPlusSecondConfiguration {
         // sql日志打印
         Properties properties = new Properties();
         properties.setProperty("sql.show","true");
-        return ShardingSphereDataSourceFactory.createDataSource(dataSourceMap, Collections.singleton(createShardingRuleConfiguration()),properties);
+        return ShardingDataSourceFactory.createDataSource(dataSourceMap, createShardingRuleConfiguration(),properties);
     }
 
     @Bean(name = "secondSqlSessionFactory")
@@ -101,22 +100,19 @@ public class MyBatisPlusSecondConfiguration {
 
     private ShardingRuleConfiguration createShardingRuleConfiguration() {
         ShardingRuleConfiguration result = new ShardingRuleConfiguration();
-        result.getTables().add(getOrderTableRuleConfiguration());
-        // 配置分表算法
-        Properties tableShardingAlgorithmrProps = new Properties();
-        tableShardingAlgorithmrProps.setProperty("algorithm-expression", "t_order_${order_id % 2}");
-        // 与某表的分片规则算法对应
-        result.getShardingAlgorithms().put("tableShardingAlgorithm",new ShardingSphereAlgorithmConfiguration("INLINE",tableShardingAlgorithmrProps));
+        result.setDefaultDataSourceName("secondDataSource");
+        result.getTableRuleConfigs().add(getOrderTableRuleConfiguration());
         return result;
     }
     /**
      *配置某表的分片规则
      */
-    private static ShardingTableRuleConfiguration getOrderTableRuleConfiguration() {
-        ShardingTableRuleConfiguration result = new ShardingTableRuleConfiguration("t_order", "secondDataSource.t_order_${0..1}");
+    private static TableRuleConfiguration getOrderTableRuleConfiguration() {
+        TableRuleConfiguration result = new TableRuleConfiguration("t_order", "secondDataSource.t_order_${0..1}");
         // 配置分表规则--某个字段对应某个算法
-        result.setTableShardingStrategy(new StandardShardingStrategyConfiguration("order_id","tableShardingAlgorithm"));
-        result.setDatabaseShardingStrategy(new NoneShardingStrategyConfiguration());
+        //result.setTableShardingStrategyConfig(new InlineShardingStrategyConfiguration("order_id","t_order_${order_id % 2}"));此种方式aop拦截不会生效
+        result.setTableShardingStrategyConfig(new StandardShardingStrategyConfiguration("orderNumber",new HintShardingAlgorithmTables()));
+        result.setDatabaseShardingStrategyConfig(new NoneShardingStrategyConfiguration());
         return result;
     }
 }

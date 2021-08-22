@@ -49,7 +49,7 @@
         <hutool.version>5.5.8</hutool.version>
         <lucene.core.version>4.0.0</lucene.core.version>
         <!--orm框架版本依赖-->
-        <shardingsphere.version>5.0.0-alpha</shardingsphere.version>
+        <shardingsphere.version>4.1.1</shardingsphere.version>
         <mysql.connect.version>8.0.25</mysql.connect.version>
         <mybatis.plus.version>3.4.3</mybatis.plus.version>
         <druid.version>1.2.6</druid.version>
@@ -95,7 +95,7 @@
         <!--分库分表sharing-shpere版本-->
         <dependency>
             <groupId>org.apache.shardingsphere</groupId>
-            <artifactId>shardingsphere-jdbc-core</artifactId>
+            <artifactId>sharding-jdbc-core</artifactId>
             <version>${shardingsphere.version}</version>
         </dependency>
         <!--mysql连接驱动-->

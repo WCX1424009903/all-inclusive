@@ -29,7 +29,7 @@ public class TestController {
     @RequestMapping("/test")
     public R test() {
        TOrder tOrder = new TOrder();
-       tOrder.setOrderId(2L);
+       tOrder.setOrderNumber("123");
        List<Map> fist = firstMapper.listUsers();
        List<Map> second = secondMapper.listMenus();
        List<Map> orders = secondMapper.listToder(tOrder);
@@ -42,7 +42,7 @@ public class TestController {
     public R insert() {
         TOrder tOrder = new TOrder();
         tOrder.setOrderId(123L);
-        tOrder.setOrderNumber("wosnsg");
+        tOrder.setOrderNumber("456");
         tOrder.setOtherthings("其它事项");
         int orders = secondMapper.inserTorder(tOrder);
         return R.ok(orders);
