@@ -4,7 +4,9 @@
 ##masterslave 和ShardingSphere-jdbc
 * 多数据源配置原理：orm框架路由时，根据配置的datasource规则，找到对应的执行数据源。sharing-jdbc也是配置datasource。
 * sharding-sphere数据源配置步骤：（1）.配置那些需要分库的db,并且设置分片算法。 （2）.配置那些需要分库的table，并设置分片算法。 （3）最后在添加到datasource中。
+* mysql脚本位置resource/sql下面
 * 待接入seata分布式事务。
+* 待接入数据脱敏处理。
 
 
 
