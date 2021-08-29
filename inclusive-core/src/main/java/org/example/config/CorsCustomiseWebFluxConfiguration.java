@@ -8,7 +8,7 @@ import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
 import org.springframework.web.util.pattern.PathPatternParser;
 
 /**
- * 跨域配置
+ * 跨域配置springwebflux
  * @author wcx
  */
 @Configuration

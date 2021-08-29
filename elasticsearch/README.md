@@ -1,32 +1,23 @@
-# Elasticsearch
+# Elasticsearch操作
 ###
     说明：本项目中只是列出了简单的es相关索引 文档及数据的crud 无法正常运行起来是正常的
     具体使用时参考相关的操作数据及全文搜索实现方法；记录下简单的应用希望在实际的项目中有所帮助
-    
 ###
 
 ###
 在线参考网址：
 https://www.jianshu.com/p/c1f2161a5d22
 https://www.jianshu.com/p/2ff05a83816e
-
 https://blog.csdn.net/angellee1988/article/details/108897016
 https://segmentfault.com/a/1190000016828596
 https://www.cnblogs.com/wangzhuxing/tag/ES/
-
 ###
 
+>#####采用rest client方式版本7.9.2
 
-
->#####采用rest client方式 
->~~~
-> Java Low Level REST Client 不挑版本 
-> Java High Level REST Client 和es版本保持一致 rest api 目前采用 
->~~~
->>###### 1 配置es 集群或者本地单机版windows 
+>>######配置es 集群或者本地单机版windows 
  ~~~~~
      文件elasticsearch.yml 属性配置
- 
      cluster.name: standard-lib	#集群名称，如果有多个集群，那么每个集群名就得是唯一的	
      node.name: node-1	#节点名称
      node.master: true		#该节点是否是master，true表示是的，false表示否，默认是true
@@ -42,5 +33,3 @@ https://www.cnblogs.com/wangzhuxing/tag/ES/
      #discovery.zen.ping.unicast.hosts: ["127.0.0.1:9300", "127.0.0.1:8300"]
      #node.max_local_storage_nodes: 2		#设置一台机子能运行的节点数目，一般采用默认的1即可，因为我们一般也只在一台机子上部署一个节点
  ~~~~~
- > ###### 2  索引库:standardStatute
- > ###### 3 安装IK分词和拼音插件

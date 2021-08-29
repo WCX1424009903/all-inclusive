@@ -54,6 +54,8 @@
         <mysql.connect.version>8.0.25</mysql.connect.version>
         <mybatis.plus.version>3.4.3</mybatis.plus.version>
         <druid.version>1.2.6</druid.version>
+        <!--elasticsearch版本依赖-->
+        <elasticsearch.version>7.9.2</elasticsearch.version>
     </properties>
     <dependencies>
         <dependency>
@@ -186,6 +188,22 @@
             <version>${fastjson.version}</version>
         </dependency>
 
+        <!--elasticsearch-->
+        <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+            <version>${elasticsearch.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-client</artifactId>
+            <version>${elasticsearch.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-high-level-client</artifactId>
+            <version>${elasticsearch.version}</version>
+        </dependency>
     </dependencies>
     </dependencyManagement>
 </project>
