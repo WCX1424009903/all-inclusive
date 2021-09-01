@@ -6,5 +6,5 @@ ___
 默认账号密码 nacos nacos
 
 ### nacos配置记录
-* 增加elasticsearch配置，配置ip和port
- 
+* 增加elasticsearch配置，配置ip和port。
+* 增加openfeign-sentinel-dev.yml配置，将sentinel和openfeign配置公共化。
