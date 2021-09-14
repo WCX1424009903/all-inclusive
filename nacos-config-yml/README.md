@@ -8,3 +8,4 @@ ___
 ### nacos配置记录
 * 增加elasticsearch配置，配置ip和port。
 * 增加openfeign-sentinel-dev.yml配置，将sentinel和openfeign配置公共化。
+* 增加security-oauth-dev.yml配置，配置oauth认证服务。

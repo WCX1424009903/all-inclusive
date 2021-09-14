@@ -6,3 +6,5 @@ gateway+sentinel网关工程
 * 启动命令:java -Dserver.port=8002 -Dcsp.sentinel.dashboard.server=127.0.0.1:8002 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard-1.8.1.jar
 * 账号sentinel 密码 sentinel
 ---
+
+* 与oauth整合鉴权整理一部分，暂时未跑通

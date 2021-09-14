@@ -17,6 +17,7 @@
         <module>elasticsearch</module>
         <module>openfeign-sentinel</module>
         <module>common-model</module>
+        <module>security-oauth</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -52,6 +53,7 @@
         <hutool.version>5.5.8</hutool.version>
         <fastjson.version>1.2.9</fastjson.version>
         <jackjson.version>2.12.3</jackjson.version>
+        <jwt.version>8.16</jwt.version>
         <!--orm框架版本依赖-->
         <shardingsphere.version>4.1.1</shardingsphere.version>
         <mysql.connect.version>8.0.25</mysql.connect.version>
@@ -196,6 +198,12 @@
             <version>${fastjson.version}</version>
         </dependency>
 
+        <!--jwt-->
+        <dependency>
+            <groupId>com.nimbusds</groupId>
+            <artifactId>nimbus-jose-jwt</artifactId>
+            <version>${jwt.version}</version>
+        </dependency>
         <!--elasticsearch-->
         <dependency>
             <groupId>org.elasticsearch</groupId>

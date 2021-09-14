@@ -45,6 +45,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(CustomizeException.class)
     public R customizeExcption(CustomizeException customizeException) {
+        customizeException.printStackTrace();
         return R.builder()
                 .code(StatusCodeEnum.INTERNAL_SERVER_ERROR.getCode())
                 .message(customizeException.getMessage()).build();
@@ -53,10 +54,20 @@ public class GlobalExceptionHandler {
      * 空指针异常
      */
     @ExceptionHandler(NullPointerException.class)
-    public R nullpointExcption() {
+    public R nullpointExcption(NullPointerException nullPointerException) {
+        nullPointerException.printStackTrace();
         return R.builder()
                 .code(StatusCodeEnum.NULL_POINT_FAILS.getCode())
                 .message(StatusCodeEnum.NULL_POINT_FAILS.getMessage()).build();
     }
-
+    /**
+     * 未知异常,服务器内部错误
+     */
+    @ExceptionHandler(Exception.class)
+    public R exception(Exception exception) {
+        exception.printStackTrace();
+        return R.builder()
+                .code(StatusCodeEnum.INTERNAL_SERVER_ERROR.getCode())
+                .message(StatusCodeEnum.INTERNAL_SERVER_ERROR.getMessage()).build();
+    }
 }

@@ -3,6 +3,7 @@
 ---
 * 采用spring.factories进行加载配置文件，相当于spi机制,拔插即用
 * 不需要的配置在springBootApplication注解中exclude中进行排除
+* pom文件中引入spring-boot-maven-plugin时，如果进行install会报错
 ---
 
 ### 配置类介绍
