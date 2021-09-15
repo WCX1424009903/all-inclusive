@@ -13,11 +13,11 @@
         <module>cloud-gateway</module>
         <module>common-utils</module>
         <module>mysql-masterslave-shardingsphere</module>
-        <module>inclusive-core</module>
         <module>elasticsearch</module>
         <module>openfeign-sentinel</module>
         <module>common-model</module>
         <module>security-oauth</module>
+        <module>inclusive-common-factories</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -37,6 +37,7 @@
         <common.utlis.version>1.0-SNAPSHOT</common.utlis.version>
         <inclusive.core.version>1.0-SNAPSHOT</inclusive.core.version>
         <common.model.version>1.0-SNAPSHOT</common.model.version>
+        <common.starter.redis>1.0-SNAPSHOT</common.starter.redis>
         <!--项目构建类版本依赖-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
@@ -61,6 +62,9 @@
         <druid.version>1.2.6</druid.version>
         <!--elasticsearch版本依赖-->
         <elasticsearch.version>7.9.2</elasticsearch.version>
+        <!--redis相关依赖-->
+        <redisson.version>3.15.0</redisson.version>
+        <lettuce.version>5.3.7.RELEASE</lettuce.version>
     </properties>
     <dependencies>
         <dependency>
@@ -102,6 +106,11 @@
             <groupId>org.example</groupId>
             <artifactId>common-model</artifactId>
             <version>${common.model.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>common-starter-redis</artifactId>
+            <version>${common.starter.redis}</version>
         </dependency>
         <!--orm框架类依赖-->
         <!--分库分表sharing-shpere版本-->
@@ -219,6 +228,19 @@
             <groupId>org.elasticsearch.client</groupId>
             <artifactId>elasticsearch-rest-high-level-client</artifactId>
             <version>${elasticsearch.version}</version>
+        </dependency>
+        <!--redis相关-->
+        <!-- redisson -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>${redisson.version}</version>
+        </dependency>
+        <!-- lettuce-core -->
+        <dependency>
+            <groupId>io.lettuce</groupId>
+            <artifactId>lettuce-core</artifactId>
+            <version>${lettuce.version}</version>
         </dependency>
     </dependencies>
     </dependencyManagement>
