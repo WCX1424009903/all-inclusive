@@ -3,6 +3,8 @@ package org.example.config;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.example.utils.RedisLockUtil;
+import org.example.utils.RedisService;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Bean;
@@ -13,8 +15,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
-import org.example.utils.RedisLockUtil;
-import org.example.utils.RedisService;
 
 /**
  * redis基础配置信息
@@ -37,7 +37,7 @@ public class RedisConfiguration {
     @SuppressWarnings("all")
     @Bean(name = "redisTemplate")
     @ConditionalOnClass(RedisOperations.class)
-    public org.springframework.data.redis.core.RedisTemplate redisTemplate(RedisConnectionFactory factory) {
+    public RedisTemplate redisTemplate(RedisConnectionFactory factory) {
         org.springframework.data.redis.core.RedisTemplate template = new org.springframework.data.redis.core.RedisTemplate();
         template.setConnectionFactory(factory);
 
