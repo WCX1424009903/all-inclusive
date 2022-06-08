@@ -17,3 +17,6 @@ ___
 * 对于debug时报错command line too long（依赖的工程太多，路径太长），由于操作系统对运行命令行的限制关系导致，解决办法在idea配置Shorten command line中采用classpath file进行压缩。
 * 出现“错误: 找不到或无法加载主类”，将所在工程进行clean install（原因：项目java代码和target不一致造成，未找到根本解决办法）。
 * 如果新建子工程导包失败，或者某些yml文件不高亮，可能是idea中进行了pom文件忽略，进入setting找到maven ignored files进行配置。
+* 对于打包出来的jar，没有依赖其它jar包，采用springboot-maven-plugin中repackage的方式进行打包。
+* maven中重复引入问题，可以考虑使用scope标签指定范围system、runtime、provide、test、compile。
+

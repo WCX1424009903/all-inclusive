@@ -1,4 +1,4 @@
-#### openfeign+sentinel工程
+#### openfeign+sentinel（1.8.1）工程
 * 配置步骤:导入相关依赖，消费者端加上@EnableFeignClients注解，服务提供者端加上@EnableDiscoveryClient注解。
 * 配置@FeignClient中value属性用于配置服务实例，与application.yml中的application-name相互对应，用于去配置中心拿对应的实例。
 * 待接入有文件上传的feign调用
