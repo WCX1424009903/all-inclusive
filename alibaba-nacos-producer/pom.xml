@@ -11,7 +11,7 @@
 
   <artifactId>alibaba-nacos-producer</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>alibaba-nacos</name>
+  <name>alibaba-nacos-producer</name>
   <packaging>jar</packaging>
 
 
