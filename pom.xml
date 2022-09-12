@@ -18,6 +18,7 @@
         <module>common-model</module>
         <module>security-oauth</module>
         <module>inclusive-common-factories</module>
+        <module>debug-source-code</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: security-oauth
+    name: debug-source-code
   cloud:
     nacos:
       config:

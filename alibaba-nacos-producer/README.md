@@ -12,6 +12,9 @@
 ___
 默认账号密码 nacos nacos
 
+### host域名映射
+nacos-config采用域名加ip地址映射，修改hosts文件进行
+
 
 ### jvm启动参数设置
 -Xms128m -Xmx256m

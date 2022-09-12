@@ -7,4 +7,4 @@ gateway+sentinel网关工程
 * 账号sentinel 密码 sentinel
 ---
 
-* 与oauth整合鉴权整理一部分，暂时未跑通
+* 网关作用：限流、权限控制、请求路由转发、熔断、负载均衡，不做任何业务处理。
