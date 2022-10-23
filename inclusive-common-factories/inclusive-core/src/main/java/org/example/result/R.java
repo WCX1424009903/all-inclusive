@@ -43,4 +43,11 @@ public class R<T> implements Serializable {
       return r;
     }
 
+    public static R ok() {
+        R r = new R();
+        r.setCode(StatusCodeEnum.SUCCESS.getCode());
+        r.setMessage(StatusCodeEnum.SUCCESS.getMessage());
+        return r;
+    }
+
 }

@@ -19,6 +19,7 @@
         <module>security-oauth</module>
         <module>inclusive-common-factories</module>
         <module>debug-source-code</module>
+        <module>common-test-module</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -40,6 +41,7 @@
         <common.model.version>1.0-SNAPSHOT</common.model.version>
         <common.starter.redis>1.0-SNAPSHOT</common.starter.redis>
         <common.starter.rabbitmq>1.0-SNAPSHOT</common.starter.rabbitmq>
+        <common.starter.mongo>1.0-SNAPSHOT</common.starter.mongo>
         <!--项目构建类版本依赖-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
@@ -118,6 +120,11 @@
             <groupId>org.example</groupId>
             <artifactId>comon-starter-rabbitmq</artifactId>
             <version>${common.starter.rabbitmq}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>common-starter-mongodb</artifactId>
+            <version>${common.starter.mongo}</version>
         </dependency>
         <!--orm框架类依赖-->
         <!--分库分表sharing-shpere版本-->
