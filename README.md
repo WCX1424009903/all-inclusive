@@ -19,4 +19,6 @@ ___
 * 如果新建子工程导包失败，或者某些yml文件不高亮，可能是idea中进行了pom文件忽略，进入setting找到maven ignored files进行配置。
 * 对于打包出来的jar，没有依赖其它jar包，采用springboot-maven-plugin中repackage的方式进行打包。
 * maven中重复引入问题，可以考虑使用scope标签指定范围system、runtime、provide、test、compile。
+* 对于项目中**.xml文件放到src/main/java中，如多数据源配置xml放在package中，在打包成jar包时没有xml的问题，需要在pom文件中设置build.resource.directory内容，详情见mysql-masterslave-shardingsphere模块pom文件。
+* maven打包带源码，需要在pom文件中配置maven-source-plugin插件。
 

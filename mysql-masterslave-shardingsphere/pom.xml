@@ -68,5 +68,20 @@
                 </executions>
             </plugin>
         </plugins>
+        <!--将xml在java包中进行打包。将resource文件全部打包进来-->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
 </project>
