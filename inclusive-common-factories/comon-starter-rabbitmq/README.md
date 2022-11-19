@@ -32,3 +32,7 @@ rabbitmqctl set_permissions -p "/" admin ".*" ".*" ".*"，第五步查看权限�
 * TTL(time-to-live) 消息超时未消费
 * 达到最大队列长度
 * 应用场景，延迟任务，实现思路为创建一个没有消费者的队列，设置TTL过期时间，并绑定到死信交换机中。弊端： RabbitMQ 消息死亡并非异步化，而是阻塞的，需要每条消息的死亡相互独立这种场景.
+#### 错误埋坑
+* 对象传输需要实现Serializable序列化接口，否则会报错导致同一vhost下其余队列不能使用。
+* 配置多vhost方案，配置多个ConnectionFactory、RabbitTemplate、SimpleRabbitListenerContainerFactory。消费者监听指定containerFactory，生产者指定信道构建器。原理参考RabbitAnnotationDrivenConfiguration类
+

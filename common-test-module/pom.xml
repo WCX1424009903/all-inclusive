@@ -33,6 +33,10 @@
             <groupId>org.example</groupId>
             <artifactId>common-starter-mongodb</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>comon-starter-rabbitmq</artifactId>
+        </dependency>
     </dependencies>
 
 

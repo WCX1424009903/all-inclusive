@@ -2,4 +2,4 @@ server:
   port: 8083
 spring:
   profiles:
-    active: "mongo"   #多个以逗号隔开
+    active: "mongo,rabbitmq"   #多个以逗号隔开

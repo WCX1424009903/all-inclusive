@@ -15,7 +15,7 @@ import java.util.List;
 */
 @RestController
 @RequestMapping("/mongo")
-public class TestController {
+public class MongodbTestController {
 
     @Resource
     private MongoTestRepository mongoTestRepository;
