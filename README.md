@@ -4,6 +4,8 @@
 * parent依赖版本不能在property属性中进行声明，必须显示声明，否则报错。
 * 对于公共模块依赖的代码，最好使用maven-source-plugin插件将源码打包，debug时方便调试。
 * common-model工程汇聚所有公共的pojo类及常量，方便在feign调用或者其它复用的类进行引用
+* inclusive-common-factories工程涵盖自定义starter，并通过common-factories工程进行测试。
+* Markdown.md文件为markdown文件语法参考汇总。
 
 ___
 maven版本: apache-maven-3.5.3

@@ -20,6 +20,7 @@
         <module>inclusive-common-factories</module>
         <module>debug-source-code</module>
         <module>common-test-module</module>
+        <module>seata-test-module</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -37,13 +38,6 @@
         <!--spring相关版本依赖-->
         <spring.cloud.alibaba.version>2.2.6.RELEASE</spring.cloud.alibaba.version>
         <spring.cloud.version>Hoxton.SR9</spring.cloud.version>
-        <!--子工程版本-->
-        <common.utlis.version>1.0-SNAPSHOT</common.utlis.version>
-        <inclusive.core.version>1.0-SNAPSHOT</inclusive.core.version>
-        <common.model.version>1.0-SNAPSHOT</common.model.version>
-        <common.starter.redis>1.0-SNAPSHOT</common.starter.redis>
-        <common.starter.rabbitmq>1.0-SNAPSHOT</common.starter.rabbitmq>
-        <common.starter.mongo>1.0-SNAPSHOT</common.starter.mongo>
         <!--项目构建类版本依赖-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
@@ -101,32 +95,37 @@
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>common-utils</artifactId>
-            <version>${common.utlis.version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>inclusive-core</artifactId>
-            <version>${inclusive.core.version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>common-model</artifactId>
-            <version>${common.model.version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>common-starter-redis</artifactId>
-            <version>${common.starter.redis}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>comon-starter-rabbitmq</artifactId>
-            <version>${common.starter.rabbitmq}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>common-starter-mongodb</artifactId>
-            <version>${common.starter.mongo}</version>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>common-starter-mybatisplus</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <!--orm框架类依赖-->
         <!--分库分表sharing-shpere版本-->

@@ -16,6 +16,7 @@
         <module>inclusive-core</module>
         <module>comon-starter-rabbitmq</module>
         <module>common-starter-mongodb</module>
+        <module>common-starter-mybatisplus</module>
     </modules>
 
     <dependencies>

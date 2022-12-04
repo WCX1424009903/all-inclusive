@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.enums.StatusCodeEnum;
+import org.example.exception.CustomizeException;
 
 import java.io.Serializable;
 
@@ -25,8 +26,8 @@ public class R<T> implements Serializable {
     /**
      * 失败方法
      */
-    public static R fail(Object data) {
-        R r = new R();
+    public static <T> R<T> fail(T data) {
+        R<T> r = new R<>();
         r.setData(data);
         r.setCode(StatusCodeEnum.FAILS.getCode());
         r.setMessage(StatusCodeEnum.FAILS.getMessage());
@@ -35,8 +36,8 @@ public class R<T> implements Serializable {
     /**
      * 成功方法
      */
-    public static R ok(Object data) {
-      R r = new R();
+    public static <T> R<T> ok(T data) {
+      R<T> r = new R<>();
       r.setData(data);
       r.setCode(StatusCodeEnum.SUCCESS.getCode());
       r.setMessage(StatusCodeEnum.SUCCESS.getMessage());
@@ -48,6 +49,15 @@ public class R<T> implements Serializable {
         r.setCode(StatusCodeEnum.SUCCESS.getCode());
         r.setMessage(StatusCodeEnum.SUCCESS.getMessage());
         return r;
+    }
+    /**
+    * 远程调用校验并获取数据
+    */
+    public T getAndCheck() {
+        if (this.code != StatusCodeEnum.SUCCESS.getCode()) {
+            throw new CustomizeException(this.getMessage());
+        }
+        return this.data;
     }
 
 }

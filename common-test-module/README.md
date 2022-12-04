@@ -2,3 +2,4 @@
 
 * 完成测试MongoDB模块
 * 完成测试rabbitmq模块
+* 完成测试mybatisplus模块

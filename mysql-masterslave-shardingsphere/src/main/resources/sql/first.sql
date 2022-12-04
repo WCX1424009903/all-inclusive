@@ -5,7 +5,7 @@
  Source Server Type    : MySQL
  Source Server Version : 80025
  Source Host           : 192.168.0.194:3306
- Source Schema         : first
+ Source Schema         : second
 
  Target Server Type    : MySQL
  Target Server Version : 80025
