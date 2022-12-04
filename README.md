@@ -21,4 +21,4 @@ ___
 * maven中重复引入问题，可以考虑使用scope标签指定范围system、runtime、provide、test、compile。
 * 对于项目中**.xml文件放到src/main/java中，如多数据源配置xml放在package中，在打包成jar包时没有xml的问题，需要在pom文件中设置build.resource.directory内容，详情见mysql-masterslave-shardingsphere模块pom文件。
 * maven打包带源码，需要在pom文件中配置maven-source-plugin插件。
-
+* maven中optional和scope标签中provide，都用于解决依赖包传递问题，两者有场景上的使用区别。具体百度。

@@ -6,7 +6,7 @@
     <!--聚合工程父级版本号-->
     <groupId>org.example</groupId>
     <artifactId>all-inclusive</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${revision}</version>
     <!--子模块-->
     <modules>
         <module>alibaba-nacos-producer</module>
@@ -32,6 +32,8 @@
 
     <!--统一管理版本号-->
     <properties>
+        <!--项目版本相关-->
+        <revision>1.0-SNAPSHOT</revision>
         <!--spring相关版本依赖-->
         <spring.cloud.alibaba.version>2.2.6.RELEASE</spring.cloud.alibaba.version>
         <spring.cloud.version>Hoxton.SR9</spring.cloud.version>

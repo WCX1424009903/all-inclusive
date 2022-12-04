@@ -6,15 +6,12 @@
   <parent>
     <groupId>org.example</groupId>
     <artifactId>all-inclusive</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${revision}</version>
   </parent>
 
   <artifactId>alibaba-nacos-producer</artifactId>
-  <version>1.0-SNAPSHOT</version>
   <name>alibaba-nacos-producer</name>
   <packaging>jar</packaging>
-
-
 
   <dependencies>
     <dependency>
@@ -30,7 +27,7 @@
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.example</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>inclusive-core</artifactId>
     </dependency>
   </dependencies>

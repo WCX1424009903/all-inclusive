@@ -1,6 +1,6 @@
 spring:
   application:
-    name: nacos-config
+    name: nacos-producer
   cloud:
     nacos:
       config:

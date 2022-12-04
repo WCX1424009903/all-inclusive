@@ -5,12 +5,10 @@
     <parent>
         <artifactId>all-inclusive</artifactId>
         <groupId>org.example</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>common-test-module</artifactId>
-    <version>1.0-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
@@ -26,15 +24,15 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.example</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>inclusive-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.example</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>common-starter-mongodb</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.example</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>comon-starter-rabbitmq</artifactId>
         </dependency>
     </dependencies>
