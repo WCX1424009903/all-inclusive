@@ -1,5 +1,6 @@
 package org.example.result;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -53,8 +54,8 @@ public class R<T> implements Serializable {
     /**
     * 远程调用校验并获取数据
     */
-    public T getAndCheck() {
-        if (this.code != StatusCodeEnum.SUCCESS.getCode()) {
+    public T checkAndGet() {
+        if (this.getCode() != StatusCodeEnum.SUCCESS.getCode()) {
             throw new CustomizeException(this.getMessage());
         }
         return this.data;

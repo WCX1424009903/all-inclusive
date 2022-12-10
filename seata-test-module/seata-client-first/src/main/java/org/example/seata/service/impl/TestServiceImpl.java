@@ -29,6 +29,6 @@ public class TestServiceImpl extends ServiceImpl<FirstMapper,First> implements T
         second.setSecondField("第二属性");
         second.setCreateTime(localDateTime);
         R<Long> result = secondFeignInterface.add(second);
-        result.getAndCheck();
+        result.checkAndGet();
     }
 }

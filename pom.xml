@@ -21,6 +21,7 @@
         <module>debug-source-code</module>
         <module>common-test-module</module>
         <module>seata-test-module</module>
+        <module>dubbo-test-module</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -38,6 +39,7 @@
         <!--spring相关版本依赖-->
         <spring.cloud.alibaba.version>2.2.6.RELEASE</spring.cloud.alibaba.version>
         <spring.cloud.version>Hoxton.SR9</spring.cloud.version>
+        <dubbo.version>2.7.8</dubbo.version>
         <!--项目构建类版本依赖-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
@@ -89,6 +91,11 @@
             <version>${spring.cloud.version}</version>
             <type>pom</type>
             <scope>import</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+            <version>${dubbo.version}</version>
         </dependency>
         <!--子工程版本声明-->
         <!--公共utils工程-->

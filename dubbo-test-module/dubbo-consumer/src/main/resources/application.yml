@@ -1,0 +1,14 @@
+server:
+  port: 9004
+dubbo:
+  application:
+    name: dubbo-consumer
+  registry:
+    address: nacos://nacos:8848
+    parameters:
+      namespace: 7a426b96-2cf3-42ec-9f0e-4d32d0a15801
+  scan:
+    base-packages: org.example.dubbo #dubbo扫描包
+  protocol:
+    port: 20880
+    name: dubbo
