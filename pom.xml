@@ -22,6 +22,7 @@
         <module>common-test-module</module>
         <module>seata-test-module</module>
         <module>dubbo-test-module</module>
+        <module>kafka-parent</module>
     </modules>
     <packaging>pom</packaging>
 

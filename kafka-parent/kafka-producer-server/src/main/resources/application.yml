@@ -1,0 +1,24 @@
+server:
+  port: 9006
+spring:
+  kafka:
+    bootstrap-servers: 192.168.2.198:9092
+    # 生产者配置
+    producer:
+      # 生产这的客户端Id
+      client-id: ${spring.application.name}-producer
+      # 应答级别:多少个分区副本备份完成时向生产者发送ack确认(可选0、1、all/-1)
+      acks: 1
+      # 批量大小
+      batch-size: 16384
+      # 生产端缓冲区大小
+      buffer-memory: 33554432
+      # Kafka提供的序列化和反序列化类
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        # 提交延时
+        linger:
+          ms: 0
+      # 重试次数
+      retries: 0

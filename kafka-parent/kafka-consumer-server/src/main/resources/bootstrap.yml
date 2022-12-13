@@ -1,6 +1,6 @@
 spring:
   application:
-    name: seata-client-first
+    name: kafka-consumer-server
   cloud:
     nacos:
       config:
