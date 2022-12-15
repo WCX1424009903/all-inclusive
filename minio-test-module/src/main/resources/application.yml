@@ -1,0 +1,11 @@
+server:
+  port: 9007
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+minio:
+  url: http://192.168.2.198:9000
+  access-key: 6TDBlosQhvGnSrMI
+  secret-key: aWK1jsbrlY6o1HhhPtY6hYDASKsOjOvv

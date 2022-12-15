@@ -17,6 +17,7 @@
         <module>comon-starter-rabbitmq</module>
         <module>common-starter-mongodb</module>
         <module>common-starter-mybatisplus</module>
+        <module>common-starter-minio</module>
     </modules>
 
     <dependencies>

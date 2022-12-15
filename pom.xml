@@ -23,6 +23,7 @@
         <module>seata-test-module</module>
         <module>dubbo-test-module</module>
         <module>kafka-parent</module>
+        <module>minio-test-module</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -68,6 +69,8 @@
         <!--redis相关依赖-->
         <redisson.version>3.15.0</redisson.version>
         <lettuce.version>5.3.7.RELEASE</lettuce.version>
+        <!--分布式存储minio版本依赖-->
+        <minio.version>8.2.1</minio.version>
     </properties>
     <dependencies>
         <dependency>
@@ -133,6 +136,11 @@
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>common-starter-mybatisplus</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>common-starter-minio</artifactId>
             <version>${project.version}</version>
         </dependency>
         <!--orm框架类依赖-->
@@ -264,6 +272,12 @@
             <groupId>io.lettuce</groupId>
             <artifactId>lettuce-core</artifactId>
             <version>${lettuce.version}</version>
+        </dependency>
+        <!--minio相关-->
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+            <version>${minio.version}</version>
         </dependency>
     </dependencies>
     </dependencyManagement>
