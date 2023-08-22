@@ -2,7 +2,7 @@ package com.example.utils.springUtils;
 
 
 import lombok.experimental.UtilityClass;
-import org.springframework.core.LocalVariableTableParameterNameDiscoverer;
+import org.springframework.core.StandardReflectionParameterNameDiscoverer;
 import org.springframework.expression.ExpressionParser;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
@@ -17,7 +17,7 @@ import java.lang.reflect.Method;
 @UtilityClass
 public class SpelUtil {
 
-    private static final LocalVariableTableParameterNameDiscoverer  localVariableTableParameterNameDiscoverer = new LocalVariableTableParameterNameDiscoverer();
+    private static final StandardReflectionParameterNameDiscoverer localVariableTableParameterNameDiscoverer = new StandardReflectionParameterNameDiscoverer();
     private static final ExpressionParser expressionParser = new SpelExpressionParser();
     private static final StandardEvaluationContext context = new StandardEvaluationContext();
 

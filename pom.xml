@@ -27,34 +27,28 @@
     </modules>
     <packaging>pom</packaging>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.2</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
-
     <!--统一管理版本号-->
     <properties>
         <!--项目版本相关-->
         <revision>1.0-SNAPSHOT</revision>
         <!--spring相关版本依赖-->
+        <spring-boot.version>3.0.2</spring-boot.version>
         <spring.cloud.alibaba.version>2022.0.0.0-RC2</spring.cloud.alibaba.version>
         <spring.cloud.version>2022.0.0</spring.cloud.version>
         <dubbo.version>3.2.5</dubbo.version>
         <!--项目构建类版本依赖-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <skipTests>true</skipTests>
         <!--工具类版本依赖-->
         <pagehelper.version>5.2.0</pagehelper.version>
         <apache.commons.lang3.version>3.12.0</apache.commons.lang3.version>
-        <poi.version>3.17</poi.version>
-        <commons.io.version>2.5</commons.io.version>
-        <commons.fileupload.version>1.3.3</commons.fileupload.version>
-        <org.apache.httpclient.version>4.5.5</org.apache.httpclient.version>
+        <poi.version>5.2.3</poi.version>
+        <commons.io.version>2.9.0</commons.io.version>
+        <commons.fileupload.version>1.5</commons.fileupload.version>
+        <org.apache.httpclient.version>4.5.9</org.apache.httpclient.version>
         <hutool.version>5.8.8</hutool.version>
         <fastjson.version>1.2.9</fastjson.version>
         <jackjson.version>2.12.3</jackjson.version>
@@ -82,6 +76,13 @@
     <dependencyManagement>
     <dependencies>
         <!--spring版本声明-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-dependencies</artifactId>
+            <version>${spring-boot.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-alibaba-dependencies</artifactId>
@@ -284,4 +285,32 @@
         </dependency>
     </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <executions>
+                    <execution>
+                        <id>repackage</id>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

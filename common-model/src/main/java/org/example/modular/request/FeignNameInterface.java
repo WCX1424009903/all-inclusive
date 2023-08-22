@@ -1,4 +1,4 @@
-package org.example.modular.userproject.requestinterface;
+package org.example.modular.request;
 
 /**
  * requestmapping地址统一管理

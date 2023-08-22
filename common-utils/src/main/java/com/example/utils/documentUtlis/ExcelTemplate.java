@@ -2,7 +2,6 @@ package com.example.utils.documentUtlis;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.hssf.usermodel.*;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.*;
@@ -74,8 +73,6 @@ public class ExcelTemplate {
                 ex = e;
             } catch (IOException e) {
                 ex = e;
-            } catch (InvalidFormatException e) {
-                e.printStackTrace();
             }
         }
     }
@@ -94,8 +91,6 @@ public class ExcelTemplate {
             ex = e;
         } catch (IOException e) {
             ex = e;
-        } catch (InvalidFormatException e) {
-            e.printStackTrace();
         }
     }
 
@@ -322,7 +317,7 @@ public class ExcelTemplate {
                 needFillCells = cellList;
                 // 获取所有的值为${}单元格
                 needFillCells = needFillCells.stream().filter(c -> {
-                    if(c != null && c.getCellTypeEnum() == CellType.STRING){
+                    if(c != null && c.getCellType() == CellType.STRING){
                         if ("${}".equals(c.getStringCellValue()) || "N${}".equals(c.getStringCellValue()))
                             return true;
                     }
@@ -576,13 +571,13 @@ public class ExcelTemplate {
         initCellList(sheetNo);
         return cellList.stream()
                 .map(c -> {
-                    if(c != null && c.getCellTypeEnum() == CellType.STRING)
+                    if(c != null && c.getCellType() == CellType.STRING)
                         return c.getStringCellValue();
                     return null;
                 })// Cell流转换为String流
                 .filter(predicate)
                 .map(s -> cellList.stream().filter(c -> {
-                    if(c != null && c.getCellTypeEnum() == CellType.STRING
+                    if(c != null && c.getCellType() == CellType.STRING
                             && s.equals(c.getStringCellValue()))
                         return true;
                     return false;
@@ -793,7 +788,7 @@ public class ExcelTemplate {
      * @return int 单元格变量的数量
      * */
     public int getFormulaVariableNum(Cell cell){
-        if (cell == null || cell.getCellTypeEnum() != CellType.FORMULA)
+        if (cell == null || cell.getCellType() != CellType.FORMULA)
             return 0;
         String formula = cell.getCellFormula();
         Matcher matcher = Pattern.compile("[A-Z]+[0-9]+").matcher(formula == null ? "" : formula);
@@ -823,7 +818,7 @@ public class ExcelTemplate {
      * */
     public void composeCellFormula(Cell cell,int index,
                                    int rowAddNum,int columnAddNum){
-        if (cell == null || cell.getCellTypeEnum() != CellType.FORMULA)
+        if (cell == null || cell.getCellType() != CellType.FORMULA)
             return;
         if (cell instanceof HSSFCell)
             throw new IllegalArgumentException("4.1.1及之前的版本的POI的处理xls文件的公式单元格有bug，建议换成xlsx文件，" +
@@ -866,7 +861,7 @@ public class ExcelTemplate {
             if(r != null){
                 r.forEach(c -> {
                     if (c != null){
-                        if (c.getCellTypeEnum() == CellType.STRING){
+                        if (c.getCellType() == CellType.STRING){
                             if("${}".equals(Optional.ofNullable(c.getStringCellValue()).orElse("").trim())){
                                 if(valueList == null)
                                     return;
@@ -1017,7 +1012,7 @@ public class ExcelTemplate {
             distCell.setCellComment(srcCell.getCellComment());
         }
         // 不同数据类型处理
-        CellType srcCellType = srcCell.getCellTypeEnum();
+        CellType srcCellType = srcCell.getCellType();
         if(copyValueFlag) {
             if(srcCellType == CellType.NUMERIC) {
                 if(DateUtil.isCellDateFormatted(srcCell)) {

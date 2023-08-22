@@ -1,4 +1,4 @@
-package org.example.modular.userproject.vo;
+package org.example.modular.vo;
 
 import lombok.Data;
 
