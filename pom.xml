@@ -61,7 +61,7 @@
         <!--elasticsearch版本依赖-->
         <elasticsearch.version>7.9.2</elasticsearch.version>
         <!--redis相关依赖-->
-        <redisson.version>3.15.0</redisson.version>
+        <redisson.version>3.23.3</redisson.version>
         <lettuce.version>5.3.7.RELEASE</lettuce.version>
         <!--分布式存储minio版本依赖-->
         <minio.version>8.2.1</minio.version>
@@ -268,7 +268,7 @@
         <!-- redisson -->
         <dependency>
             <groupId>org.redisson</groupId>
-            <artifactId>redisson</artifactId>
+            <artifactId>redisson-spring-boot-starter</artifactId>
             <version>${redisson.version}</version>
         </dependency>
         <!-- lettuce-core -->
