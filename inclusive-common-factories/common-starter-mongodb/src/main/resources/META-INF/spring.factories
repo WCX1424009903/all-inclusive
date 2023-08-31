@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  org.example.config.ApplicationReadyListener
+  org.example.mongodb.config.ApplicationReadyListener

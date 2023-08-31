@@ -2,7 +2,7 @@ package org.example.controller.mongodb;
 
 import org.example.dao.MongoTestRepository;
 import org.example.domain.MongoTest;
-import org.example.result.R;
+import org.example.core.result.R;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;

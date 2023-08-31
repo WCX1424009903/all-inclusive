@@ -11,6 +11,7 @@
     <artifactId>inclusive-core</artifactId>
 
     <dependencies>
+
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>

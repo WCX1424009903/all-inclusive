@@ -1,8 +1,8 @@
 package org.example.controller.rabbitmq;
 
-import org.example.constant.RabbitmqConstant;
+import org.example.rabbitmq.constant.RabbitmqConstant;
 import org.example.domain.RabbitmqObject;
-import org.example.result.R;
+import org.example.core.result.R;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,6 +1,6 @@
 package org.example.seata.feign;
 
-import org.example.result.R;
+import org.example.core.result.R;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

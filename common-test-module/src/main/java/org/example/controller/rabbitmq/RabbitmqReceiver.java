@@ -3,7 +3,7 @@ package org.example.controller.rabbitmq;
 import cn.hutool.json.JSONUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.example.constant.RabbitmqConstant;
+import org.example.rabbitmq.constant.RabbitmqConstant;
 import org.example.domain.RabbitmqObject;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;

@@ -2,7 +2,7 @@ package org.example.minio.controller;
 
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.example.minio.utils.MinioUtils;
-import org.example.result.R;
+import org.example.core.result.R;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 

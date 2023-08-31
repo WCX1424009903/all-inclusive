@@ -2,7 +2,7 @@ package org.example.seata.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.seata.spring.annotation.GlobalTransactional;
-import org.example.result.R;
+import org.example.core.result.R;
 import org.example.seata.domain.First;
 import org.example.seata.feign.Second;
 import org.example.seata.feign.SecondFeignInterface;

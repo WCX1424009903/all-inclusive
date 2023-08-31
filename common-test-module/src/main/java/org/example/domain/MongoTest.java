@@ -1,7 +1,7 @@
 package org.example.domain;
 
 import lombok.Data;
-import org.example.annotation.QueryField;
+import org.example.mongodb.annotation.QueryField;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 

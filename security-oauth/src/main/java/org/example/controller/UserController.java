@@ -1,6 +1,6 @@
 package org.example.controller;
 
-import org.example.result.R;
+import org.example.core.result.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;

@@ -1,7 +1,7 @@
 package org.example.config;
 
-import org.example.enums.OauthCodeEnum;
-import org.example.utils.AssertUtil;
+import org.example.core.enums.OauthCodeEnum;
+import org.example.core.utils.AssertUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;

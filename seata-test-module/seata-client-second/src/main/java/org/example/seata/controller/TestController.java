@@ -1,6 +1,6 @@
 package org.example.seata.controller;
 
-import org.example.result.R;
+import org.example.core.result.R;
 import org.example.seata.domain.Second;
 import org.example.seata.service.TestService;
 import org.springframework.web.bind.annotation.PostMapping;

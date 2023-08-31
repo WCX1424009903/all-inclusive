@@ -1,6 +1,6 @@
 package org.example.kafka.controller;
 
-import org.example.result.R;
+import org.example.core.result.R;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
