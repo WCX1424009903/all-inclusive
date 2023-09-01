@@ -1,4 +1,4 @@
-package org.example.config;
+package org.example.security.config;
 
 import org.example.core.enums.OauthCodeEnum;
 import org.example.core.utils.AssertUtil;
