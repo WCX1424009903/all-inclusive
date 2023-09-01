@@ -6,12 +6,13 @@
 * common-model工程汇聚所有公共的pojo类及常量，方便在feign调用或者其它复用的类进行引用
 * inclusive-common-factories工程涵盖自定义starter，并通过common-factories工程进行测试。
 * Markdown.md文件为markdown文件语法参考汇总。
+* 新增springboot3.0新特性aot(ahead of time)
 
 ___
 maven版本: apache-maven-3.5.3
 
 ---
-nacos-org.example.config-yml文件夹存放nacos导出配置文件（nacos版本2.0.0）
+nacos-org.example.config-yml文件夹存放nacos导出配置文件（nacos版本2.0.0+）
 ___
 
 

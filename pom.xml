@@ -78,6 +78,7 @@
     <dependencyManagement>
     <dependencies>
         <!--spring版本声明-->
+        <!--不采用<relativePath/>lookup parent from repository模式，是避免将父类项目定死了，采用pom导入方式，因此plugin需要自己配置-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-dependencies</artifactId>
@@ -304,6 +305,12 @@
                     <target>${maven.compiler.target}</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
+            </plugin>
+            <!--native-plugin版本，取决于spring-boot-dependencies里面的native-maven-plugin-->
+            <plugin>
+                <groupId>org.graalvm.buildtools</groupId>
+                <artifactId>native-maven-plugin</artifactId>
+                <version>0.9.19</version>
             </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
