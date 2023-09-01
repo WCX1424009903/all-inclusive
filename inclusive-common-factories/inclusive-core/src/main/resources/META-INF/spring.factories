@@ -1,5 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  org.example.core.config.JackJsonSerilaizeConfig,\
-  org.example.core.config.CorsCustomiseMvcConfiguration,\
-  org.example.core.config.CorsCustomiseWebFluxConfiguration,\
-  org.example.core.exception.GlobalExceptionHandler
