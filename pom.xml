@@ -67,8 +67,6 @@
         <lettuce.version>5.3.7.RELEASE</lettuce.version>
         <!--分布式存储minio版本依赖-->
         <minio.version>8.2.1</minio.version>
-        <!--sa-token依赖-->
-        <sa.token.version>1.34.0</sa.token.version>
     </properties>
     <dependencies>
         <dependency>
@@ -256,12 +254,6 @@
             <groupId>com.nimbusds</groupId>
             <artifactId>nimbus-jose-jwt</artifactId>
             <version>${jwt.version}</version>
-        </dependency>
-        <!--sa-token鉴权-->
-        <dependency>
-            <groupId>cn.dev33</groupId>
-            <artifactId>sa-token-spring-boot3-starter</artifactId>
-            <version>${sa.token.version}</version>
         </dependency>
         <!--elasticsearch-->
         <dependency>

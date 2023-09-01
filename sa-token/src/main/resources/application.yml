@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: sa-token-service
+  config:
+    import:
+      - optional:nacos:common-dev.yml #公共yml配置
+  cloud:
+    nacos:
+      config:
+        server-addr: ${NACOS_ADDRESS:192.168.2.199}:8848
+        namespace: 7a426b96-2cf3-42ec-9f0e-4d32d0a15801
+      discovery:
+        server-addr: ${NACOS_ADDRESS:192.168.2.199}:8848
+        namespace: 7a426b96-2cf3-42ec-9f0e-4d32d0a15801
