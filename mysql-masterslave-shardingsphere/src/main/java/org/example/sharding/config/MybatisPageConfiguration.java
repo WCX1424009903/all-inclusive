@@ -21,16 +21,4 @@ public class MybatisPageConfiguration {
         return paginationInnerInterceptor;
     }
 
-    /*@Bean(name="pageHelper")
-    public PageHelper getPageHelper() {
-        PageHelper pageHelper = new PageHelper();
-        Properties properties = new Properties();
-        properties.setProperty("reasonable", "true");
-        properties.setProperty("supportMethodsArguments", "true");
-        properties.setProperty("returnPageInfo", "true");
-        properties.setProperty("params", "count=countSql");
-        pageHelper.setProperties(properties);
-        return pageHelper;
-    }*/
-
 }

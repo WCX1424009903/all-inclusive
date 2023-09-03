@@ -1,5 +1,6 @@
 package org.example.mongodb.config;
 
+import jakarta.annotation.Resource;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -8,7 +9,6 @@ import org.springframework.data.mongodb.core.convert.DefaultMongoTypeMapper;
 import org.springframework.data.mongodb.core.convert.MappingMongoConverter;
 import org.springframework.data.mongodb.core.convert.MongoConverter;
 
-import javax.annotation.Resource;
 
 /**
 *忽略MongoDB自动为实体类增加_class字段属性

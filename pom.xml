@@ -44,7 +44,6 @@
         <maven.compiler.target>17</maven.compiler.target>
         <skipTests>true</skipTests>
         <!--工具类版本依赖-->
-        <pagehelper.version>5.2.0</pagehelper.version>
         <apache.commons.lang3.version>3.12.0</apache.commons.lang3.version>
         <poi.version>5.2.3</poi.version>
         <commons.io.version>2.9.0</commons.io.version>
@@ -173,12 +172,6 @@
             <groupId>com.baomidou</groupId>
             <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
             <version>${dynamic.datasource.version}</version>
-        </dependency>
-        <!--MyBatis分页插件-->
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper</artifactId>
-            <version>${pagehelper.version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-modules-java8 -->
         <dependency>
