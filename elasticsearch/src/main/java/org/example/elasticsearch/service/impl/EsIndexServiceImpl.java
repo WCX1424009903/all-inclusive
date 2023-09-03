@@ -1,8 +1,7 @@
 package org.example.elasticsearch.service.impl;
 
 import cn.hutool.core.collection.CollUtil;
-import org.example.elasticsearch.service.BaseElasticService;
-import org.example.elasticsearch.service.EsIndexService;
+import jakarta.annotation.PostConstruct;
 import org.apache.commons.collections4.map.HashedMap;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.elasticsearch.action.support.IndicesOptions;
@@ -11,9 +10,10 @@ import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.indices.CreateIndexRequest;
 import org.elasticsearch.client.indices.CreateIndexResponse;
 import org.elasticsearch.client.indices.GetIndexRequest;
+import org.example.elasticsearch.service.BaseElasticService;
+import org.example.elasticsearch.service.EsIndexService;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;

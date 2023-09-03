@@ -1,5 +1,6 @@
 package org.example.seata.controller;
 
+import jakarta.annotation.Resource;
 import org.example.core.result.R;
 import org.example.seata.domain.First;
 import org.example.seata.service.TestService;
@@ -8,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 
 /**
 * seata服务调用

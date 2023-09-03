@@ -2,6 +2,7 @@ package org.example.seata.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.seata.core.context.RootContext;
+import jakarta.servlet.http.HttpServletRequest;
 import org.example.seata.domain.Second;
 import org.example.seata.mapper.SecondMapper;
 import org.example.seata.service.TestService;
@@ -9,7 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import javax.servlet.http.HttpServletRequest;
 
 @Service
 public class TestServiceImpl extends ServiceImpl<SecondMapper, Second> implements TestService {
