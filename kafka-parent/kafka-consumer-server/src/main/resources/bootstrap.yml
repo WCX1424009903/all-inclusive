@@ -4,12 +4,12 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: nacos:8848
+        server-addr: ${NACOS_ADDRESS:192.168.2.199}:8848
         file-extension: yml
         namespace: 7a426b96-2cf3-42ec-9f0e-4d32d0a15801
         shared-configs: common-dev.yml #公共yml配置
       discovery:
-        server-addr: nacos:8848
+        server-addr: ${NACOS_ADDRESS:192.168.2.199}:8848
         namespace: 7a426b96-2cf3-42ec-9f0e-4d32d0a15801
   profiles:
     active: dev
