@@ -1,0 +1,31 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: rocketmq-consumer-server
+  config:
+    import:
+      - optional:nacos:common-dev.yml #公共yml配置
+  cloud:
+    nacos:
+      config:
+        server-addr: ${NACOS_ADDRESS:192.168.2.199}:8848
+        namespace: 7a426b96-2cf3-42ec-9f0e-4d32d0a15801
+      discovery:
+        server-addr: ${NACOS_ADDRESS:192.168.2.199}:8848
+        namespace: 7a426b96-2cf3-42ec-9f0e-4d32d0a15801
+    function:
+      definition: consumerHandler
+    stream:
+      rocketmq:
+        binder:
+          name-server: ${ROCKETMQ_NAMESRV_ADDR:192.168.2.198:9876}
+          group: consumerHandler_group
+      bindings:
+        # springcloud-stream规范，consumer前缀为函数bean名称
+        consumerHandler-input-0:
+          destination: rocketmq-normal-message-topic
+          group: consumerHandler_group
+
+rocketmq:
+  name-server: ${ROCKETMQ_NAME_SERVER:192.168.2.198:9876}

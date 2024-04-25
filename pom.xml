@@ -25,6 +25,7 @@
         <module>kafka-parent</module>
         <module>minio-test-module</module>
         <module>sa-token</module>
+        <module>rocketmq-parent</module>
     </modules>
     <packaging>pom</packaging>
 
