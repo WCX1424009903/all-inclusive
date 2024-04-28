@@ -1,9 +1,9 @@
 package org.example.rocketmq.config;
 
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.messaging.Message;
 
 import java.util.function.Consumer;
 
@@ -14,12 +14,18 @@ import java.util.function.Consumer;
  * @date 2024/04/24
  */
 @Configuration
+@Slf4j
 public class ConsumerConfig {
 
+    /**
+     * 消费者处理程序，不能返回message<String>，否则消息不会消费
+     *
+     * @return {@link Consumer}<{@link String}>
+     */
     @Bean
-    public Consumer<Message<String>> consumerHandler() {
+    public Consumer<String> consumerHandler() {
         return message -> {
-            System.out.println(Thread.currentThread().getName() + " Consumer Receive New Messages: " + message.getPayload());
+            log.info(Thread.currentThread().getName() + " Consumer Receive New Messages: " + message);
         };
     }
 

@@ -20,10 +20,9 @@ spring:
       rocketmq:
         binder:
           name-server: ${ROCKETMQ_NAMESRV_ADDR:192.168.2.198:9876}
-          group: consumerHandler_group
       bindings:
         # springcloud-stream规范，consumer前缀为函数bean名称
-        consumerHandler-input-0:
+        consumerHandler-in-0:
           destination: rocketmq-normal-message-topic
           group: consumerHandler_group
 
