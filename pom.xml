@@ -66,6 +66,8 @@
         <lettuce.version>5.3.7.RELEASE</lettuce.version>
         <!--分布式存储minio版本依赖-->
         <minio.version>8.2.1</minio.version>
+        <!--netty版本，与springcloud-sentinel版本保持一致-->
+        <netty.version>4.1.48.Final</netty.version>
     </properties>
     <dependencies>
         <dependency>
@@ -277,6 +279,12 @@
             <groupId>io.minio</groupId>
             <artifactId>minio</artifactId>
             <version>${minio.version}</version>
+        </dependency>
+        <!--netty，网络聊天-->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>${netty.version}</version>
         </dependency>
     </dependencies>
     </dependencyManagement>
