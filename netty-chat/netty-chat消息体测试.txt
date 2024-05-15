@@ -1,0 +1,40 @@
+用户1登录：
+{"bridge":false,"dataContent":"{\"loginUserId\":\"1\",\"loginToken\":\"text\",\"firstLoginTime\":\"1715607031\"}","fp":"20240513","from":"1","qoS":true,"sm":-1,"to":"0","type":0,"typeu":-1}
+用户2登录：
+{"bridge":false,"dataContent":"{\"loginUserId\":\"2\",\"loginToken\":\"text\",\"firstLoginTime\":\"1715607031\"}","fp":"20240513","from":"2","qoS":true,"sm":-1,"to":"0","type":0,"typeu":-1}
+
+用户1心跳检测:
+{
+ "type":1,
+  "dataContent":"心跳包检测",
+  "from":"1",
+   "to":"0",
+   "QoS":true,
+   "typeu":-1,
+   "sm":-1,
+   "fp":"20240513"
+}
+
+用户2心跳检测:
+{
+ "type":1,
+  "dataContent":"心跳包检测",
+  "from":"2",
+   "to":"0",
+   "QoS":true,
+   "typeu":-1,
+   "sm":-1,
+   "fp":"20240513"
+}
+
+用户1给用户2发送聊天消息：
+{
+ "type":2,
+  "dataContent":"用户1给用户2发送在线内容",
+  "from":"1",
+   "to":"2",
+   "QoS":true,
+   "typeu":-1,
+   "sm":-1,
+   "fp":"20240513"
+}

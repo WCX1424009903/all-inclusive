@@ -26,6 +26,7 @@
         <module>minio-test-module</module>
         <module>sa-token</module>
         <module>rocketmq-parent</module>
+        <module>netty-chat</module>
     </modules>
     <packaging>pom</packaging>
 
