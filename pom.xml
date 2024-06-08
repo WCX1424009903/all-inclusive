@@ -69,6 +69,8 @@
         <minio.version>8.2.1</minio.version>
         <!--netty版本，与springcloud-sentinel版本保持一致-->
         <netty.version>4.1.48.Final</netty.version>
+        <!--jetcache版本依赖-->
+        <jetcache.version>2.7.4</jetcache.version>
     </properties>
     <dependencies>
         <dependency>
@@ -286,6 +288,12 @@
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
             <version>${netty.version}</version>
+        </dependency>
+        <!--jetcache 缓存框架-->
+        <dependency>
+            <groupId>com.alicp.jetcache</groupId>
+            <artifactId>jetcache-starter-redis</artifactId>
+            <version>${jetcache.version}</version>
         </dependency>
     </dependencies>
     </dependencyManagement>
