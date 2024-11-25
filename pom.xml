@@ -71,6 +71,9 @@
         <netty.version>4.1.48.Final</netty.version>
         <!--jetcache版本依赖-->
         <jetcache.version>2.7.4</jetcache.version>
+        <!--easyExcel-->
+        <easy.excel.version>4.0.3</easy.excel.version>
+        <eec.version>0.5.20</eec.version>
     </properties>
     <dependencies>
         <dependency>
@@ -294,6 +297,18 @@
             <groupId>com.alicp.jetcache</groupId>
             <artifactId>jetcache-starter-redis</artifactId>
             <version>${jetcache.version}</version>
+        </dependency>
+        <!--easyExcel框架-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>easyexcel</artifactId>
+            <version>${easy.excel.version}</version>
+        </dependency>
+        <!--Excel框架之eec-->
+        <dependency>
+            <groupId>org.ttzero</groupId>
+            <artifactId>eec</artifactId>
+            <version>${eec.version}</version>
         </dependency>
     </dependencies>
     </dependencyManagement>
