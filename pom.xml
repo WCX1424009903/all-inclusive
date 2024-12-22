@@ -74,6 +74,8 @@
         <!--easyExcel-->
         <easy.excel.version>4.0.3</easy.excel.version>
         <eec.version>0.5.20</eec.version>
+        <!--qlExpress-->
+        <ql.express.version>3.3.4</ql.express.version>
     </properties>
     <dependencies>
         <dependency>
@@ -310,6 +312,13 @@
             <artifactId>eec</artifactId>
             <version>${eec.version}</version>
         </dependency>
+        <!--qlExpress-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>QLExpress</artifactId>
+            <version>${ql.express.version}</version>
+        </dependency>
+
     </dependencies>
     </dependencyManagement>
 
