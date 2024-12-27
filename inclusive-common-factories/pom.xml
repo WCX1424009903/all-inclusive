@@ -18,6 +18,7 @@
         <module>common-starter-mongodb</module>
         <module>common-starter-mybatisplus</module>
         <module>common-starter-minio</module>
+        <module>common-starter-qlexpress</module>
     </modules>
 
     <dependencies>
